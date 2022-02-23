@@ -1,10 +1,10 @@
-const getRandomNumber = function (min, max) {
-  if (min <= 0) {
+const getRandomNumber = (min, max) => {
+  if (min <=0 || max <=0) {
     // eslint-disable-next-line no-alert
     alert('Диапазон заданных чисел может быть только положительный');
     return;
   }
-  else if (min === max) {
+  if (min === max) {
     return min;
   }
   min = Math.ceil(min);
@@ -14,19 +14,10 @@ const getRandomNumber = function (min, max) {
 getRandomNumber();
 
 
-const getStringLength = function(string, maxLength) {
-  if (string === '' || string === 'undefined') {
-    // eslint-disable-next-line no-alert
-    alert('Строка пуста');
+const getStringLength = (string, maxLength) => {
+  if (string.length > maxLength) {
     return false;
   }
-  else if (string.length > maxLength) {
-    // eslint-disable-next-line no-alert
-    alert('Превышено максимальное значение символов');
-    return false;
-  }
-  else if (string.length <= maxLength) {
-    return true;
-  }
+  return true;
 };
 getStringLength();
